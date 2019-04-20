@@ -1,0 +1,36 @@
+from tkinter import*
+import threading, time, sys
+from tkinter import DISABLED
+
+
+
+
+class counter :
+
+
+
+    def num(self): 
+        global num
+        for num in range(5):
+            global timer
+            timer=5
+            print(timer-num)
+            time.sleep(1)
+        
+
+    def handler(self):
+        if num<=1:
+            button.configure(state=DISABLED)
+ 
+ 
+
+def root():
+    global button 
+    root=Tk()
+    root.mainloop()
+    button=Button(root,text="hi")
+    button.grid(row=0,column=0) 
+
+th1 = threading.Thread(target = counter().num).start()
+th2 = threading.Thread(target = counter().handler).start()
+root()
